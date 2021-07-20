@@ -74,6 +74,7 @@ export default function Dashboard() {
           overflowY="auto"
           pb="10"
           w="60"
+          display={{ base: 'none', md: 'block' }}
           transform={sidebar.isOpen ? 'translateX(-15rem)' : ''}
           transition="all .5s ease"
         >
@@ -131,9 +132,9 @@ export default function Dashboard() {
         </Box>
       </Box>
       <Box 
-        ml={{ base: 0, md: 60 }} 
+        ml={{ base: 0, md: sidebar.isOpen ? 0 : 60 }}
         // transition=".3s ease"
-        transform={sidebar.isOpen ? 'translateX(-15rem)' : ''}
+        // transform={sidebar.isOpen ? 'margin-right(-15rem)' : ''}
         transition="all .5s ease"
       >
         <Flex
@@ -156,7 +157,26 @@ export default function Dashboard() {
             />
           </Flex>
         </Flex>
-        Ok ok ok ok ok
+
+        <Box as="main" p="4">
+          <Flex>
+            <Box
+              p="10"
+              flex="1"
+              backgroundColor="teal.300"
+            >
+              1
+            </Box>
+            <Box
+              p="10"
+              flex="1"
+              backgroundColor="teal.600"
+            >
+              1
+            </Box>
+          </Flex>
+        </Box>
+        
       </Box>
     </Box>
   )
